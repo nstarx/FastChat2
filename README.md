@@ -57,6 +57,12 @@ Here is a dump of history, no special order
 ```
 
 ...
+DS2 Machine URL after firewall open ports
+
+
+http://40.76.227.135:7860/
+
+
 ...
 
 
