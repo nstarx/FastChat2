@@ -649,7 +649,7 @@ def build_single_model_ui(models, add_promotion_links=False):
     )
 
     notice_markdown = f"""
-# 🏔️ Chat with Open Large Language Models
+# NStarX RAG
 {promotion}
 """
 
