@@ -62,7 +62,12 @@ DS2 Machine URL after firewall open ports
 FastChat UI at
 
 ```
-http://40.76.227.135:7860/
+http://40.76.227.135:7860/   ui
+
+http://40.76.227.135:21001/docs   controller api
+
+http://40.76.227.135:21002/docs     worker api
+
 ```
 
 ...
