@@ -1,11 +1,14 @@
-#FROM nvidia/cuda:12.2.0-runtime-ubuntu20.04
-FROM ubuntu
+FROM nvidia/cuda:12.2.0-runtime-ubuntu20.04
 
 RUN apt-get update -y && apt-get install -y python3.9 python3.9-distutils curl
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.9 get-pip.py
-RUN mkdir /opt/
-RUN copy . /opt/.
-ENV PYTHONPATH=/opt/
+RUN mkdir /apps/
+WORKDIR /apps/
+COPY requirements.txt /apps/requirements.txt
+RUN pip install -r requirements.txt
+COPY . /apps/.
+ENV PYTHONPATH=/apps/
+
 #RUN pip3 install fschat
 #RUN pip3 install fschat[model_worker,webui] pydantic==1.10.13
