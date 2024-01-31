@@ -1,0 +1,35 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+env:
+  DOCKER_REGISTRY: nstarx.azurecr.io
+  IMAGE_NAME: fastchat-backend
+  NAMESPACE: default
+  DEPLOYMENT_NAME: nstarx-fastchat
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Registry
+      run: |
+        echo ${{ secrets.DOCKER_PASSWORD }} | docker login $DOCKER_REGISTRY -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+    - name: Build Docker Image
+      run: |
+        docker build -t $DOCKER_REGISTRY/$IMAGE_NAME:latest -f ./docker/Dockerfile .
+
+    - name: Push Docker Image
+      run: |
+        echo "DOCKER_REGISTRY is: $DOCKER_REGISTRY $VAR_1"
+        docker push $DOCKER_REGISTRY/$IMAGE_NAME:latest
+
