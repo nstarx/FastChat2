@@ -1,84 +1,5 @@
-# Vanilla Ubuntu Machine
 
-Machine Type 
-
-https://learn.microsoft.com/en-us/azure/virtual-machines/nct4-v3-series
-
-
-Install GPU Drivers
-
-https://github.com/lm-sys/FastChat https://learn.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
-
-Install PyEnv and Screen
-
-Here is a dump of history, no special order
-```
-    1  sudo lshw -C display
-    8  curl https://pyenv.run | bash
-   12  pyenv install 3.10.5
-    2  nvidia-smi
-    3  sudo apt install virtualenv
-    6  pip3 install "fschat[model_worker,webui]"
-    8  curl https://pyenv.run | bash
-    9  nano .bashrc 
-   15  sudo  apt-get install build-essential
-   18  sudo apt install zlib
-   19  sudo apt install zlibsudo apt install zlib1g
-   20  sudo apt install zlib1g
-   21  sudo apt install zlib1g-dev
-   22  pyenv install 3.10
-   23  lspci | grep -i NVIDIA
-   25  pyenv install --list
-   26  pyenv 3.10
-   29  pyenv activate systen
-   33  pyenv install --list
-   40  sudo apt-get install bzip2 libreadline6 libreadline6-dev openssl
-   41  sudo apt-get install bzip2 libreadline6  openssl
-   42  sudo apt-get install bzip2  openssl
-   43  sudo apt-get install python-openssl
-   45  sudo apt-get install libbz2-dev
-   47  sudo apt install libssl-dev
-   48  pyenv install 3.10.13
-   49  /home/azureuser/.pyenv/versions/3.10.13/bin/python3.10
-   50  pyenv virtualenv 3.10  project1
-   51  pyenv versions
-   55  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb 
-   56  sudo dpkg -i cuda-keyring_1.0-1_all.deb
-   57  sudo apt-get update
-   58  sudo apt-get -y install cuda-drivers
-   59  nvidia-smi
-       sudo apt-get install -y nvidia-container-toolkit
-       docker run -it --gpus=all <image_name>
-   60  pip3 install "fschat[model_worker,webui]"
-   61  screen -S fastchat.serve.controller
-   62  screen -S model_worker_vicuna
-   63  screen -S gradio
-   64  screen list
-   65  screen -ls
-   69  history
-```
-
-...
-DS2 Machine URL after firewall open ports
-
-FastChat UI at
-
-```
-http://40.76.227.135:7860/   ui
-
-http://40.76.227.135:21001/docs   controller api
-
-http://40.76.227.135:21002/docs     worker api
-
-```
-
-...
-
-
-
-
-# FastChat
-| [**Demo**](https://chat.lmsys.org/) | [**Discord**](https://discord.gg/HSWAKCrnFx) | [**X**](https://x.com/lmsysorg) |
+# NStarX RAG & FastChat Studio
 
 FastChat is an open platform for training, serving, and evaluating large language model based chatbots.
 - FastChat powers Chatbot Arena (https://chat.lmsys.org/), serving over 6 million chat requests for 50+ LLMs.
@@ -88,12 +9,7 @@ FastChat's core features include:
 - The training and evaluation code for state-of-the-art models (e.g., Vicuna, MT-Bench).
 - A distributed multi-model serving system with web UI and OpenAI-compatible RESTful APIs.
 
-## News
-- [2023/09] 🔥 We released **LMSYS-Chat-1M**, a large-scale real-world LLM conversation dataset. Read the [report](https://arxiv.org/abs/2309.11998).
-- [2023/08] We released **Vicuna v1.5** based on Llama 2 with 4K and 16K context lengths. Download [weights](#vicuna-weights).
-- [2023/07] We released **Chatbot Arena Conversations**, a dataset containing 33k conversations with human preferences. Download it [here](https://huggingface.co/datasets/lmsys/chatbot_arena_conversations).
-
-<details>
+~<details>
 <summary>More</summary>
 
 - [2023/08] We released **LongChat v1.5** based on Llama 2 with 32K context lengths. Download [weights](#longchat).
