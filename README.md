@@ -46,7 +46,9 @@ Here is a dump of history, no special order
    56  sudo dpkg -i cuda-keyring_1.0-1_all.deb
    57  sudo apt-get update
    58  sudo apt-get -y install cuda-drivers
-   59  nvidia-smi 
+   59  nvidia-smi
+       sudo apt-get install -y nvidia-container-toolkit
+       docker run -it --gpus=all <image_name>
    60  pip3 install "fschat[model_worker,webui]"
    61  screen -S fastchat.serve.controller
    62  screen -S model_worker_vicuna
